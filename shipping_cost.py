@@ -1,4 +1,4 @@
-# write a function that determins the lowest shipping cost. 
+# write a function that determins the lowest shipping cost.
 # Ground Shipping, which is a small flat charge plus a rate based on the weight of your package.
 # Weight of Package	Price per Pound	Flat Charge
 # 2 lb or less	$1.50	$20.00
@@ -16,37 +16,42 @@
 
 
 def groud_shipping(w):
-  flat_fee = 20
-  if w <= 2:
-    price = 1.5
-  elif w <= 6:
-    price = 3
-  elif w <= 10:
-    price = 4
-  elif w > 10:
-    price = 4.75
-  return price*w + flat_fee
+    flat_fee = 20
+    if w <= 2:
+        price = 1.5
+    elif w <= 6:
+        price = 3
+    elif w <= 10:
+        price = 4
+    elif w > 10:
+        price = 4.75
+    return price * w + flat_fee
+
 
 def groud_shipping_premium(w):
-  flat_fee = 125
-  return flat_fee
-  
+    flat_fee = 125
+    return flat_fee
+
+
 def drone_shipping(w):
-  flat_fee = 0
-  if w <= 2:
-    price = 4.5
-  elif w <= 6:
-    price = 9
-  elif w <= 10:
-    price = 12
-  elif w > 10:
-    price = 14.25
-  return price*w + flat_fee
+    flat_fee = 0
+    if w <= 2:
+        price = 4.5
+    elif w <= 6:
+        price = 9
+    elif w <= 10:
+        price = 12
+    elif w > 10:
+        price = 14.25
+    return price * w + flat_fee
+
+
 def best_shipping(w):
-  x = groud_shipping(w)
-  y = groud_shipping_premium(w)
-  z = drone_shipping(w)
-  lowest = [x, y, z]
-  return min(lowest)
+    x = groud_shipping(w)
+    y = groud_shipping_premium(w)
+    z = drone_shipping(w)
+    lowest = [x, y, z]
+    return min(lowest)
+
 
 print(best_shipping(1))
